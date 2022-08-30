@@ -8,8 +8,8 @@
 		<title>Cafe with a Vue</title>
 	</head>
 	<body>
-		<div class="app">
-			<h1>La belle vue</h1>
+		<div id="presentation" class="app">
+			<h1>{{ presentationName }}</h1>
 			<p class="description">
 				Bienvenue dans notre café la belle vue ! Nous sommes réputés pour notre
 				pain et nos merveilleuses pâtisseries. Faites vous plaisir dès le matin
@@ -21,6 +21,15 @@
 			</footer>
 		</div>
 
-		<script src="https://unpkg.com/vue@3"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		
+		<script>
+			var presentation = new Vue({
+				el: '#presentation',
+				data: {
+					presentationName: 'La belle vue'
+				}
+			});
+		</script>
 	</body>
 </html>
