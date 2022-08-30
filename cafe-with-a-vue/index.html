@@ -18,9 +18,9 @@
 			</p>
 
 			<h2>Contactez nous</h2>
-			<p>Adresse : 18 avenue du Beurre, Paris, France</p>
-			<p>Téléphone : 01 88 88 88 88</p>
-			<p>Email : hello@cafewithavue.bakery</p>
+			<p>Adresse : {{ adresse }}</p>
+			<p>Téléphone : {{ telephone }}</p>
+			<p>Email : {{ email }}</p>
 			<p>Horaires :</p>
 			<ul>
 				<li>L-V: 06:00 à 16:00</li>
@@ -38,7 +38,10 @@
 			const app = new Vue({
 				el: "#app",
 				data: {
-					restaurantName: "La belle vue"
+					restaurantName: "Café avec vue",
+					adresse: '18 avenue du Beurre, Paris, France',
+					telephone: '01 88 88 88 88',
+					email: 'hello@cafewithavue.bakery'
 				}
 			})
 		</script>
