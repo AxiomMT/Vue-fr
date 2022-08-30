@@ -19,27 +19,28 @@
 
 			<section class="menu">
 				<h2>Menu</h2>
-				<div class="menu-item">
+				<div class="menu-item" v-for="item in simpleMenu">
 					<img
 						class="menu-item__image"
-						src="https://via.placeholder.com/300x150"
-						alt=""
+						:src="item.image.source"
+						:alt="item.image.alt"
 					/>
 					<div>
-						<h3>Nom de l'article</h3>
-						<p>En stock</p>
-						<p>En rupture de stock</p>
-						<div>
+						<h3>{{ item.name }}</h3>
+						<p v-if="item.inStock">En stock</p>
+						<p v-else>En rupture de stock</p>
+						<div v-if="item.inStock">
 							<label for="add-item-quantity">Quantité :</label>
-							<input id="add-item-quantity" type="number" />
-							<button>Ajouter au panier d'achat</button>
+							<input id="add-item-quantity" type="number" v-model="item.quantity" />
+							<button v-on:click="addToShoppingCart(item)">Ajouter au panier d'achat</button>
 						</div>
 					</div>
 				</div>
 			</section>
 
 			<aside class="shopping-cart">
-				<h2>Panier d'achat: 0 articles</h2>
+				<h2>Panier d'achat: {{ shoppingCart.articlesNbr }} articles</h2>
+				<h2>Montant total:  {{ shoppingCart.totalAmount }} euros</h2>
 			</aside>
 
 			<h2>Contactez nous</h2>
@@ -67,6 +68,11 @@
 					email: "hello@cafewithavue.bakery",
 					phone: "01 88 88 88 88",
 					restaurantName: "La belle vue",
+					shoppingCart: {
+						totalAmount: 0,
+						articles: [],
+						articlesNbr: 0
+					},
 					simpleMenu: [
 						{
 							name: "Croissant",
@@ -75,7 +81,8 @@
 								alt: "Un croissant"
 							},
 							inStock: true,
-							quantity: 1
+							quantity: 1,
+							price: 1
 						},
 						{
 							name: "Baguette de pain",
@@ -84,7 +91,8 @@
 								alt: "Quatre baguettes de pain"
 							},
 							inStock: true,
-							quantity: 1
+							quantity: 1,
+							price: 0.90
 						},
 						{
 							name: "Éclair",
@@ -93,7 +101,8 @@
 								alt: "Éclair au chocolat"
 							},
 							inStock: false,
-							quantity: 1
+							quantity: 1,
+							price: 2.5
 						}
 					]
 				},
@@ -102,6 +111,13 @@
 						const currentYear = new Date().getFullYear()
 
 						return `Copyright ${this.restaurantName} ${currentYear}`
+					}
+				},
+				methods: {
+					addToShoppingCart(article) {
+						this.shoppingCart.articles.push(article);
+						this.shoppingCart.articlesNbr += Number(article.quantity);
+						this.shoppingCart.totalAmount += Number(article.quantity) * Number(article.price);
 					}
 				}
 			})
