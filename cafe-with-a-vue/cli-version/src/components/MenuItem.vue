@@ -1,7 +1,7 @@
 <script>
 export default {
     name: 'MenuItem',
-    props: ['name', 'inStock', 'quantity', 'imageSrc', 'imageAlt']
+    props: ['name', 'inStock', 'imageSrc', 'imageAlt']
 }
 </script>
 
@@ -14,7 +14,7 @@ export default {
             <p v-else>En rupture de stock</p>
             <div>
                 <label for="add-item-quantity">Quantité : {{ quantity }}</label>
-                <input v-model.number="quantity" id="add-item-quantity" type="number" />
+                <input v-model.number="item.quantity" id="add-item-quantity" type="number" />
                 <button @click="addToShoppingCart(quantity)">Ajouter au panier d'achat</button>
             </div>
         </div>
