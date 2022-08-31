@@ -71,7 +71,7 @@
         {
           name: "Croissant",
           image: {
-            source: "./images/croissant.jpg",
+            source: "/images/croissant.jpg",
             alt: "Un croissant"
           },
           inStock: true,
@@ -80,7 +80,7 @@
         {
           name: "Baguette de pain",
           image: {
-            source: "./images/french-baguette.jpeg",
+            source: "/images/french-baguette.jpeg",
             alt: "Quatre baguettes de pain"
           },
           inStock: true,
@@ -89,7 +89,7 @@
         {
           name: "Éclair",
           image: {
-            source: "./images/eclair.jpg",
+            source: "/images/eclair.jpg",
             alt: "Éclair au chocolat"
           },
           inStock: false,
