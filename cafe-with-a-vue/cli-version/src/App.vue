@@ -16,7 +16,9 @@
           :inStock="item.inStock" 
           :quantity="item.quantity" 
           :imageSrc="item.image.src"
-          :imageAlt="item.image.alt" />
+          :imageAlt="item.image.alt" 
+          @addItem="addToShoppingCart(item.quantity)"
+        />
       </div>
     </section>
 
