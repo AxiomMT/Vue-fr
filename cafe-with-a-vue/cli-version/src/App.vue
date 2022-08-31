@@ -1,14 +1,3 @@
-<script>
-import MenuItem from './components/MenuItem.vue'
-
-export default {
-  name: 'App',
-  components: {
-    MenuItem
-  }
-}
-</script>
-
 <template>
   <div id="app" class="app">
     <h1>{{ restaurantName }}</h1>
@@ -51,57 +40,61 @@ export default {
   </div>
 </template>
 
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script>
-  const app = new Vue({
-    el: "#app",
-    data: {
-      address: "18 avenue du Beurre, Paris, France",
-      email: "hello@cafewithavue.bakery",
-      phone: "01 88 88 88 88",
-      restaurantName: "La belle vue",
-      shoppingCart: 0,
-      simpleMenu: [
-        {
-          name: "Croissant",
-          image: {
-            source: "/images/croissant.jpg",
-            alt: "Un croissant"
-          },
-          inStock: true,
-          quantity: 1
-        },
-        {
-          name: "Baguette de pain",
-          image: {
-            source: "/images/french-baguette.jpeg",
-            alt: "Quatre baguettes de pain"
-          },
-          inStock: true,
-          quantity: 1
-        },
-        {
-          name: "Éclair",
-          image: {
-            source: "/images/eclair.jpg",
-            alt: "Éclair au chocolat"
-          },
-          inStock: false,
-          quantity: 1
-        }
-      ]
-    },
-    computed: {
-      copyright() {
-        const currentYear = new Date().getFullYear()
+import MenuItem from './components/MenuItem.vue'
 
-        return `Copyright ${this.restaurantName} ${currentYear}`
+export default {
+  name: 'App',
+  components: {
+    MenuItem
+  },
+  data: {
+    address: "18 avenue du Beurre, Paris, France",
+    email: "hello@cafewithavue.bakery",
+    phone: "01 88 88 88 88",
+    restaurantName: "La belle vue",
+    shoppingCart: 0,
+    simpleMenu: [
+      {
+        name: "Croissant",
+        image: {
+          source: "/images/croissant.jpg",
+          alt: "Un croissant"
+        },
+        inStock: true,
+        quantity: 1
+      },
+      {
+        name: "Baguette de pain",
+        image: {
+          source: "/images/french-baguette.jpeg",
+          alt: "Quatre baguettes de pain"
+        },
+        inStock: true,
+        quantity: 1
+      },
+      {
+        name: "Éclair",
+        image: {
+          source: "/images/eclair.jpg",
+          alt: "Éclair au chocolat"
+        },
+        inStock: false,
+        quantity: 1
       }
-    },
-    methods: {
-      addToShoppingCart(amount) {
-        this.shoppingCart += amount
-      }
+    ]
+  },
+  computed: {
+    copyright() {
+      const currentYear = new Date().getFullYear()
+
+      return `Copyright ${this.restaurantName} ${currentYear}`
     }
-  })
+  },
+  methods: {
+    addToShoppingCart(amount) {
+      this.shoppingCart += amount
+    }
+  }
+}
 </script>
