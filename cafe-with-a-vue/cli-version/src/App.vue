@@ -48,41 +48,43 @@ export default {
   components: {
     MenuItem
   },
-  data: {
-    address: "18 avenue du Beurre, Paris, France",
-    email: "hello@cafewithavue.bakery",
-    phone: "01 88 88 88 88",
-    restaurantName: "La belle vue",
-    shoppingCart: 0,
-    simpleMenu: [
-      {
-        name: "Croissant",
-        image: {
-          source: "/images/croissant.jpg",
-          alt: "Un croissant"
+  data() {
+    return {
+      address: "18 avenue du Beurre, Paris, France",
+      email: "hello@cafewithavue.bakery",
+      phone: "01 88 88 88 88",
+      restaurantName: "La belle vue",
+      shoppingCart: 0,
+      simpleMenu: [
+        {
+          name: "Croissant",
+          image: {
+            source: "/images/croissant.jpg",
+            alt: "Un croissant"
+          },
+          inStock: true,
+          quantity: 1
         },
-        inStock: true,
-        quantity: 1
-      },
-      {
-        name: "Baguette de pain",
-        image: {
-          source: "/images/french-baguette.jpeg",
-          alt: "Quatre baguettes de pain"
+        {
+          name: "Baguette de pain",
+          image: {
+            source: "/images/french-baguette.jpeg",
+            alt: "Quatre baguettes de pain"
+          },
+          inStock: true,
+          quantity: 1
         },
-        inStock: true,
-        quantity: 1
-      },
-      {
-        name: "Éclair",
-        image: {
-          source: "/images/eclair.jpg",
-          alt: "Éclair au chocolat"
-        },
-        inStock: false,
-        quantity: 1
-      }
-    ]
+        {
+          name: "Éclair",
+          image: {
+            source: "/images/eclair.jpg",
+            alt: "Éclair au chocolat"
+          },
+          inStock: false,
+          quantity: 1
+        }
+      ]
+    }
   },
   computed: {
     copyright() {
@@ -98,3 +100,31 @@ export default {
   }
 }
 </script>
+
+<style>
+  .app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+  }
+
+  .description {
+    max-width: 960px;
+    font-size: 1.2rem;
+    margin: 0 auto;
+  }
+
+  .footer {
+    text-align: center;
+    font-style: italic;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
