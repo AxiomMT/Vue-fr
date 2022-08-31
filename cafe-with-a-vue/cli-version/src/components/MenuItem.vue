@@ -6,7 +6,7 @@ export default {
 </script>
 
 <template>
-    <div>    
+    <div class="menu-item">    
         <img class="menu-item__image" :src="imageSrc" :alt="imageAlt" />
         <div>
             <h3>{{ name }}</h3>
@@ -20,3 +20,16 @@ export default {
         </div>
     </div>
 </template>
+
+<style>
+    .menu-item {
+        display: flex;
+        width: 500px;
+        justify-content: space-between;
+        margin-bottom: 30px;
+    }
+
+    .menu-item__image {
+        max-width: 300px;
+    }
+</style>
