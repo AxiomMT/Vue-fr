@@ -96,7 +96,7 @@ import Counter from "./Counter"
 
 export default {
 	name: "HelloWorld",
-	data: {
+	data() {
 		title: "OpenClassrooms - Quiz de la section 2"
 	}
 }
