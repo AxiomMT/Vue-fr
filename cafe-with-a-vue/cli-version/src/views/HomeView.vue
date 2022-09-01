@@ -26,8 +26,6 @@
       <h2>Panier d'achat : {{ shoppingCart }} articles</h2>
     </aside>
 
-    <ContactView :address="address" :email="email" :phone="phone" />
-
     <footer class="footer">
       <p>{{ copyright }}</p>
     </footer>
@@ -35,17 +33,12 @@
 </template>
 
 <script>
-// import MenuItem from './components/MenuItem.vue'
-// import Contact from './views/ContactView.vue'
-
-import MenuItem from './src/components/MenuItem.vue'
-import ContactView from './src/views/ContactView.vue'
+import MenuItem from '../components/MenuItem.vue'
 
 export default {
   name: 'HomeView',
   components: {
-    MenuItem,
-    ContactView
+    MenuItem
   },
   data() {
     return {
