@@ -1,5 +1,6 @@
 <script>
 export default {
+	name: 'CounterItem',
 	data() {
 		return {
 			currentCount: 0

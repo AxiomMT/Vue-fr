@@ -1,7 +1,7 @@
 <template>
 	<div class="hello">
 		<h1>{{ title }}</h1>
-		<Counter />
+		<CounterItem />
 		<p>
 			Pour découvrir le guide sur comment configurer / customiser ce projet,<br />
 			jetez un oeil à
@@ -92,12 +92,14 @@
 </template>
 
 <script>
-import Counter from "./Counter"
+// import CounterItem from './Counter.vue'
 
 export default {
 	name: "HelloWorld",
 	data() {
-		title: "OpenClassrooms - Quiz de la section 2"
+		return {
+			title: "OpenClassrooms - Quiz de la section 2"
+		}
 	}
 }
 </script>
