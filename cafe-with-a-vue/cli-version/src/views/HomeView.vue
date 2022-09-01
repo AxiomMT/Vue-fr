@@ -42,9 +42,6 @@ export default {
   },
   data() {
     return {
-      address: "18 avenue du Beurre, Paris, France",
-      email: "hello@cafewithavue.bakery",
-      phone: "01 88 88 88 88",
       restaurantName: "La belle vue",
       shoppingCart: 0,
       simpleMenu: [

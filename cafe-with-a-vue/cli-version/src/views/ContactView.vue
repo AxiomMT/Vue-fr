@@ -13,9 +13,21 @@
     </div>
 </template>
 
+<style>
+    li {
+        list-style-type: none;
+    }
+</style>
+
 <script>
 export default {
     name: 'ContactView',
-    props: ['address', 'phone', 'email']
+    data() {
+        return {
+            address: "18 avenue du Beurre, Paris, France",
+            email: "hello@cafewithavue.bakery",
+            phone: "01 88 88 88 88"
+        }
+    }
 }
 </script>
