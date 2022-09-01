@@ -15,7 +15,7 @@
 
 <script>
 export default {
-    name: 'Contact',
+    name: 'ContactView',
     props: ['address', 'phone', 'email']
 }
 </script>
