@@ -92,10 +92,13 @@
 </template>
 
 <script>
-// import CounterItem from './Counter.vue'
+import CounterItem from '../components/Counter.vue'
 
 export default {
 	name: "HelloWorld",
+	components: {
+		CounterItem
+	},
 	data() {
 		return {
 			title: "OpenClassrooms - Quiz de la section 2"
