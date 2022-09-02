@@ -1,6 +1,6 @@
 <script>
 export default {
-	name: "Contact",
+	name: "ContactView",
 	data() {
 		return {
 			address: "18 avenue du Beurre, Paris, France",

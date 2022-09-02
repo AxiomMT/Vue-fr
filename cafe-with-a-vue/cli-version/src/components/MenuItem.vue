@@ -39,10 +39,8 @@ export default {
 			<p v-else>En rupture de stock</p>
 			<div>
 				<label for="add-item-quantity">Quantité : {{ quantity }}</label>
-				<input v-model.number="quantity" id="add-item-quantity" type="number" />
-				<button @click="addToShoppingCart(quantity)">
-					Ajouter au panier
-				</button>
+                <input :value="quantity" id="add-item-quantity" type="number" />
+                <button @click="$emit('addItem')">Ajouter au panier d'achat</button>
 			</div>
 		</div>
 	</div>
