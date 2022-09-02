@@ -26,7 +26,7 @@
 // })
 
 /* Custom version (working) */
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/Home.vue'
 import UserView from '../views/User.vue'
 import AboutView from '../views/About.vue'
@@ -55,7 +55,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes
 })
 
