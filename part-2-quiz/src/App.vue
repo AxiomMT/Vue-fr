@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div id="app">
 		<nav>
 			<router-link to="/">Home</router-link> |
 			<router-link to="/login">Login</router-link> |
@@ -17,9 +17,6 @@
 	-moz-osx-font-smoothing: grayscale;
 	text-align: center;
 	color: #2c3e50;
-	border: orange solid thin;
-	width: 480px;
-	height: 360px;
 }
 nav {
 	padding: 30px;
