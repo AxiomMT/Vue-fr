@@ -19,6 +19,7 @@
 				:quantity="item.quantity"
 				:inStock="item.inStock"
 				:key="item.name"
+				@addItem="addToShoppingCart(item.quantity)"
 			/>
 		</section>
 
@@ -36,7 +37,6 @@
 import MenuItem from "../components/MenuItem"
 
 export default {
-	name: "Home",
 	components: {
 		MenuItem
 	},

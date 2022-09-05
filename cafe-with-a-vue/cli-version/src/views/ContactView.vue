@@ -1,6 +1,5 @@
 <script>
 export default {
-	name: "Contact",
 	data() {
 		return {
 			address: "18 avenue du Beurre, Paris, France",
