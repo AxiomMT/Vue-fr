@@ -52,6 +52,11 @@ export default {
 		if (today % 2 === 0) {
 			this.onSale = true
 		}
+	},
+	methods: {
+		emitMyItemValue(event) {
+			this.$emit('update-item-value', event.target.previousElementSibling.value);
+		}
 	}
 }
 </script>
@@ -70,7 +75,7 @@ export default {
 			<div>
 				<label for="add-item-quantity">Quantité : {{ quantity }}</label>
                 <input :value="quantity" id="add-item-quantity" type="number" />
-                <button @click="$emit('addItem')">Ajouter au panier d'achat</button>
+                <button @click="emitMyItemValue($event)">Ajouter au panier d'achat</button>
 			</div>
 		</div>
 	</div>
