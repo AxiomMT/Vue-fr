@@ -43,8 +43,8 @@ export default {
 		}
 	},
 	methods: {
-		updateShoppingCart(quantity) {
-			this.$emit("add-items-to-cart", quantity)
+		updateShoppingCart(event) {
+			this.$emit("add-items-to-cart", event.target.previousElementSibling.value)
 		}
 	},
 	beforeMount() {
@@ -70,10 +70,8 @@ export default {
 			<p v-else>En rupture de stock</p>
 			<div>
 				<label for="add-item-quantity">Quantité : {{ quantity }}</label>
-				<input v-model.number="quantity" id="add-item-quantity" type="number" />
-				<BaseButton @click="updateShoppingCart(quantity)">
-					Ajouter au panier
-				</BaseButton>
+				<input :value="quantity" id="add-item-quantity" type="number" />
+				<BaseButton @click="updateShoppingCart($event)">Ajouter au panier</BaseButton>
 			</div>
 		</div>
 	</div>
