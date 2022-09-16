@@ -36,7 +36,7 @@
 import MenuItem from "../components/MenuItem"
 
 export default {
-	name: "Home",
+	name: "HomeView",
 	components: {
 		MenuItem
 	},
